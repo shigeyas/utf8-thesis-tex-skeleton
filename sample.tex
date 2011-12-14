@@ -1,0 +1,114 @@
+\documentclass[twoside,11pt,a4paper]{jsbook}
+\usepackage[dvipdfmx,cymk,dvipsnames,x11names,hyperref]{xcolor}
+
+\ifx\ucs\undefined
+\usepackage{atbegshi}
+\ifnum 42146=\euc"A4A2
+  \AtBeginShipoutFirst{\special{pdf:tounicode EUC-UCS2}}
+\else
+  \AtBeginShipoutFirst{\special{pdf:tounicode 90ms-RKSJ-UCS2}}
+\fi\fi
+
+%\usepackage{hyperxmp}
+
+\usepackage[dvipdfmx]{graphicx}
+\usepackage[dvipdfmx,
+ setpagesize=false,
+ colorlinks=true,
+ bookmarks=true,
+ bookmarksnumbered=true,
+ bookmarkstype=toc,
+ bookmarksopen=true,
+ bookmarksopenlevel=3,
+ CJKbookmarks=true, hyperfootnotes=false]{hyperref}
+
+%hyperref-dvipdfm fix - make bookmarks working with Preview.app
+%% \makeatletter
+%% \def\@pdfm@dest#1{%
+%% \Hy@SaveLastskip
+%% \@pdfm@mark{dest (#1) [@thispage /\@pdfview\space @xpos @ypos null]}%
+%% \Hy@RestoreLastskip
+%% }
+%% \makeatother
+\hypersetup{%
+ % linkcolor={NavyBlue},%
+ % citecolor={NavyBlue},%
+ % urlcolor={NavyBlue},%
+ % linkbordercolor={0 0 0},%
+ % pdfborder={0 0 0},%
+ pdftitle={タイトル},%
+ pdfsubject={さぶじぇくと},%
+ pdfauthor={著者},%
+ pdfkeywords={キーワード1; キーワード2},%
+% only with hyperxmp
+% pdfcopyright={Copyright© 2011 First Last, All Rights Reserved.},
+% pdflang={Japanese},
+}
+
+\setcounter{tocdepth}{2}
+
+\title{タイトル}
+
+\begin{document}
+\frontmatter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  FILE: titlepage.tex
+
+\begin{titlepage}
+\noindent\begin{minipage}{\fullwidth}
+
+\begin{Large}
+X 論 ~~~平成23年度 (2011)
+\end{Large}
+
+\begin{center}
+\vspace{20mm}
+%~ \bigskip ~ \\
+\begin{Large}
+\begin{tabular}{|c|}\hline
+{\gt ~~~タイトル~~~}\\ \hline
+\end{tabular}
+\end{Large}
+\\
+\vspace{40mm}
+\begin{center}
+\includegraphics[scale=0.5]{Logo.pdf}
+\end{center}
+\vspace{45mm}
+\begin{Large}
+\medskip
+ほげ大学 ほげ学部 \\
+\medskip
+ほげ ほげ \\
+\end{Large}
+
+\end{center}
+\end{minipage}
+\end{titlepage}
+
+\clearpage
+
+\addcontentsline{toc}{chapter}{目次}
+\tableofcontents
+\clearpage
+\listoffigures
+\clearpage
+\listoftables
+\clearpage
+\mainmatter
+
+
+\chapter{序論}
+
+\section{背景}
+
+\section{問題点}
+
+\section{アプローチ}
+
+\section{構成}
+
+%\bibliographystyle{ipsjunsrt2011}
+%\bibliography{thesis}
+
+\end{document}
+
